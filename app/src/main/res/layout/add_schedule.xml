@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".bookPage">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:layout_margin="15dp"
+                android:text="일정"
+                android:textColor="@color/green"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#EEEEEE"
+            android:hint="  일정 제목"
+            android:privateImeOptions="defaultInputmode=korean"
+            android:gravity="center_vertical"
+            />
+
+        <Button
+            android:id="@+id/btn_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EEEEEE"
+            android:text="  색상"
+            android:textColor="#000000"
+            android:gravity="center_vertical" />
+
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            tools:context=".Help_btn">
+
+            <Switch
+                android:id="@+id/Switch1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:switchMinWidth="10dp"
+                android:switchPadding="10dp"
+                android:layout_margin="10dp"
+                android:text="기념일 알림"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btn_help"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/roung"
+                android:text="\?"
+                android:layout_margin="8dp"
+                android:textSize="15sp"
+                android:onClick="onClick"></Button>
+        </LinearLayout>
+
+        <Switch
+            android:id="@+id/Switch2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:switchMinWidth="10dp"
+            android:switchPadding="22dp"
+            android:layout_margin="10dp"
+            android:text="과제 알림"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            tools:context=".bookPage">
+
+            <Button
+                android:id="@+id/btn_start"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#EEEEEE"
+                android:text="  시작"
+                android:layout_weight="1"
+                android:textColor="#000000"
+                android:gravity="center_vertical"
+                android:onClick="onClick"
+                />
+
+            <Button
+                android:id="@+id/btn_start_date"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#EEEEEE"
+                android:text=" 날짜 "
+                android:layout_weight="1"
+                android:textColor="#808080"
+                android:gravity="center_vertical"
+                android:onClick="onClick"
+                />
+            <Button
+                android:id="@+id/btn_start_time"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#EEEEEE"
+                android:text=" 시간 "
+                android:layout_weight="1"
+                android:textColor="#808080"
+                android:gravity="center_vertical"
+                android:onClick="onClick"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            tools:context=".bookPage">
+
+            <Button
+                android:id="@+id/btn_end"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#EEEEEE"
+                android:text="  종료"
+                android:layout_weight="1"
+                android:textColor="#000000"
+                android:gravity="center_vertical"
+                android:onClick="onClick"
+                />
+
+            <Button
+                android:id="@+id/btn_end_date"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#EEEEEE"
+                android:text=" 날짜 "
+                android:layout_weight="1"
+                android:textColor="#808080"
+                android:gravity="center_vertical"
+                android:onClick="onClick"
+                />
+            <Button
+                android:id="@+id/btn_end_time"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#EEEEEE"
+                android:text=" 시간 "
+                android:layout_weight="1"
+                android:textColor="#808080"
+                android:gravity="center_vertical"
+                android:onClick="onClick"
+                />
+        </LinearLayout>
+
+
+
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_margin="15dp"
+             />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#EEEEEE"
+            android:text="  장소"
+            android:privateImeOptions="defaultInputmode=korean"
+            android:gravity="center_vertical" />
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#EEEEEE"
+            android:text="  메모"
+            android:privateImeOptions="defaultInputmode=korean"
+            android:gravity="center_vertical" />
+
+        <Button
+            android:id="@+id/ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/green"
+            android:text="저장하기"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="17dp" />
+
+    </LinearLayout>
+
+
+</ScrollView>

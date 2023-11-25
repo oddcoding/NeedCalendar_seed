@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".bookPage">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/checklist"
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:layout_margin="15dp"
+                android:text="체크리스트"
+                android:textStyle="bold"
+                android:textColor="@color/green"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/check_title"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#EEEEEE"
+            android:hint="  일정 제목    "
+            android:privateImeOptions="defaultInputmode=korean"
+            android:gravity="center_vertical" />
+
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_margin="0dp" />
+
+        <EditText
+            android:id="@+id/check_place"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#EEEEEE"
+            android:text="  장소 "
+            android:privateImeOptions="defaultInputmode=korean"
+            android:gravity="center_vertical" />
+        <EditText
+            android:id="@+id/check_memo"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#EEEEEE"
+            android:text="  메모  "
+            android:privateImeOptions="defaultInputmode=korean"
+            android:gravity="center_vertical" />
+
+        <CheckBox
+            android:id="@+id/myCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="체크리스트 고정"
+            android:checked="false"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            />
+
+        <Button
+            android:id="@+id/check_ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/green"
+            android:text="저장하기"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="17dp" />
+
+    </LinearLayout>
+
+
+</ScrollView>

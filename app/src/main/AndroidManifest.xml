@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NeedCalendar"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.needcalendar.MenuViewActivity"/>
+        <activity
+            android:name="com.example.needcalendar.add_schedule"/>
+        <activity
+            android:name="com.example.needcalendar.fortune_cookie"/>
+        <activity
+            android:name="com.example.needcalendar.login"/>
+        <activity
+            android:name="com.example.needcalendar.Screen"/>
+        <activity
+            android:name="com.example.needcalendar.TodayCalendar"/>
+        <activity
+            android:name="com.example.needcalendar.RegisterActivity"/>
+        <activity
+            android:name="com.example.needcalendar.add_checklist"/>
+        <activity
+            android:name="com.example.needcalendar.timer"/>
+        <activity
+            android:name="com.example.needcalendar.seed"/>
+    </application>
+
+</manifest>
