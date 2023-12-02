@@ -63,14 +63,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_TITLE, title);
         values.put(COLUMN_PLACE, place);
         values.put(COLUMN_MEMO, memo);
-        values.put(COLUMN_STARTDATE, startDate);    // 추가
-        values.put(COLUMN_ENDDATE, endDate);        // 추가
+        values.put(COLUMN_STARTDATE, startDate);
+        values.put(COLUMN_ENDDATE, endDate);
 
-        // 데이터를 데이터베이스에 추가하고 결과를 반환합니다.
+
         return db.insert(TABLE_NAME, null, values);
     }
 
-    //데이터 수정
+
     public long updateData(String title, String place, String memo) {
         SQLiteDatabase db = getWritableDatabase();
 
@@ -79,11 +79,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_PLACE, place);
         values.put(COLUMN_MEMO, memo);
 
-        // 데이터를 특정 ID 값에 해당하는 레코드에만 업데이트합니다.
+
         return db.update(TABLE_NAME, values, COLUMN_ID + " = ?", new String[]{String.valueOf(title)});
     }
 
-    //DELETE문(할일 목록을 제거 한다.)
+
     public long deleteData(long id) {
         SQLiteDatabase db = this.getWritableDatabase();
         String whereClause = DatabaseHelper.COLUMN_ID + " = ?";
@@ -91,7 +91,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         int deletedRows = db.delete(DatabaseHelper.TABLE_NAME, whereClause, whereArgs);
 
 
-        // 삭제된 항목의 ID를 반환합니다.
         if (deletedRows > 0) {
             return id;
         } else {

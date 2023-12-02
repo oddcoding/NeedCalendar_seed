@@ -38,7 +38,6 @@ public class DBhelper_timer extends SQLiteOpenHelper{
         return result != -1;
     }
 
-    // 데이터베이스로부터 모든 레코드를 검색하는 메서드
     public Cursor getAllRecords() {
         SQLiteDatabase db = this.getReadableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME;

@@ -74,7 +74,7 @@ public class ChecklistAdapter extends RecyclerView.Adapter<ChecklistAdapter.View
                         Context context = view.getContext();
 
                         String[] strChoiceItems = {"수정하기", "삭제하기"};
-                        // 다이얼로그를 만듭니다.
+
                         AlertDialog.Builder builder = new AlertDialog.Builder(context);
                         builder.setTitle("작업을 선택하세요");
                         builder.setItems(strChoiceItems, new DialogInterface.OnClickListener(){
@@ -93,13 +93,13 @@ public class ChecklistAdapter extends RecyclerView.Adapter<ChecklistAdapter.View
                             private void deleteData(ListCheck todoItem, int curPos) {
                                 if (mContext != null) {
                                     DBcheck dbHelper = new DBcheck(mContext);
-                                    long deletedItemId = dbHelper.deleteData(todoItem.getId()); // 여기서 getId()는 아이템의 고유 ID를 반환하는 메서드입니다.
+                                    long deletedItemId = dbHelper.deleteData(todoItem.getId());
                                     dbHelper.close();
 
                                     if (deletedItemId != -1) {
-                                        checklistItems.remove(curPos); // 체크리스트에서 아이템 제거
-                                        notifyItemRemoved(curPos); // 아답터에 아이템 제거를 알림
-                                        notifyItemRangeChanged(curPos, checklistItems.size()); // 아답터에 아이템 변경을 알림
+                                        checklistItems.remove(curPos);
+                                        notifyItemRemoved(curPos);
+                                        notifyItemRangeChanged(curPos, checklistItems.size());
                                         Toast.makeText(mContext, "목록이 제거되었습니다.", Toast.LENGTH_SHORT).show();
                                     } else {
                                         Toast.makeText(mContext, "목록 제거에 실패했습니다.", Toast.LENGTH_SHORT).show();

@@ -58,11 +58,11 @@ public class DBcheck extends SQLiteOpenHelper {
         values.put(COLUMN_PLACE, place);
         values.put(COLUMN_MEMO, memo);
         values.put(COLUMN_IS_CHECKED, isChecked ? 1 : 0);
-        // 데이터를 데이터베이스에 추가하고 결과를 반환합니다.
+
         return db.insert(TABLE_NAME, null, values);
     }
 
-    //데이터 수정
+
     public long updateData(String title, String place, String memo, boolean isChecked) {
         SQLiteDatabase db = getWritableDatabase();
 
@@ -72,11 +72,11 @@ public class DBcheck extends SQLiteOpenHelper {
         values.put(COLUMN_MEMO, memo);
 
         values.put(COLUMN_IS_CHECKED, isChecked ? 1 : 0);
-        // 데이터를 특정 ID 값에 해당하는 레코드에만 업데이트합니다.
+
         return db.update(TABLE_NAME, values, COLUMN_ID + " = ?", new String[]{String.valueOf(title)});
     }
 
-    //DELETE문(할일 목록을 제거 한다.)
+
     public long deleteData(long id) {
         SQLiteDatabase db = this.getWritableDatabase();
         String whereClause = DBcheck.COLUMN_ID + " = ?";
@@ -84,7 +84,7 @@ public class DBcheck extends SQLiteOpenHelper {
         int deletedRows = db.delete(DBcheck.TABLE_NAME, whereClause, whereArgs);
 
 
-        // 삭제된 항목의 ID를 반환합니다.
+
         if (deletedRows > 0) {
             return id;
         } else {
@@ -113,8 +113,7 @@ public class DBcheck extends SQLiteOpenHelper {
 
 
             if (isChecked == 1) {
-                // 연두색으로 색을 변경하는 코드를 작성하세요
-                // 예를 들어, item 또는 체크리스트 뷰의 배경 색을 변경할 수 있습니다
+
                 item.setBackgroundColor(Color.GREEN);
             }
 

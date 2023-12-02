@@ -13,7 +13,6 @@ import java.util.List;
 public class checklist extends RecyclerView.Adapter<checklist.BoardViewHolder> {
 
 
-    //데이터 리스트
     private List<list> dataList;
 
     public checklist(List<list> dataList) {
@@ -45,13 +44,11 @@ public class checklist extends RecyclerView.Adapter<checklist.BoardViewHolder> {
     @Override
     public int getItemCount() {
 
-        // 전체 데이터의 개수 조회
         return dataList.size();
     }
 
 
     public class BoardViewHolder extends RecyclerView.ViewHolder {
-        //ViewHolder 에 필요한 데이터들
         private TextView title;
         private TextView place;
         private TextView memo;

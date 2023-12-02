@@ -150,7 +150,45 @@
                     android:hint="기록을 저장해보세요"
                     />
 
+                <EditText
+                    android:id="@+id/memo_txt2"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="15dp"
+                    android:privateImeOptions="defaultInputmode=korean"
+                    android:gravity="center_vertical"
+                    android:hint="기록을 저장해보세요"
+                    />
 
+                <EditText
+                    android:id="@+id/memo_txt3"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="15dp"
+                    android:privateImeOptions="defaultInputmode=korean"
+                    android:gravity="center_vertical"
+                    android:hint="기록을 저장해보세요"
+                    />
+
+                <EditText
+                    android:id="@+id/memo_txt4"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="15dp"
+                    android:privateImeOptions="defaultInputmode=korean"
+                    android:gravity="center_vertical"
+                    android:hint="기록을 저장해보세요"
+                    />
+
+                <EditText
+                    android:id="@+id/memo_txt5"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="15dp"
+                    android:privateImeOptions="defaultInputmode=korean"
+                    android:gravity="center_vertical"
+                    android:hint="기록을 저장해보세요"
+                    />
 
             </LinearLayout>
         </LinearLayout>
@@ -162,7 +200,7 @@
                 android:id="@+id/ok2"
                 android:layout_width="195dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="325dp"
+                android:layout_marginTop="200dp"
                 android:background="@color/lightgreen"
                 android:text="저장하기"
                 android:textAlignment="center"
@@ -177,7 +215,7 @@
                 android:id="@+id/RCbtn"
                 android:layout_width="195dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="325dp"
+                android:layout_marginTop="200dp"
                 android:background="@color/lightgreen"
                 android:text="기록보기"
                 android:textAlignment="center"

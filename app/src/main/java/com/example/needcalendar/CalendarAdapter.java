@@ -44,74 +44,74 @@ class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull CalendarViewHolder holder, int position) {
-        DatabaseHelper dbHelper = new DatabaseHelper(context); // 또는 해당 컨텍스트에 맞게 인스턴스화
-        List<ListItem> items = dbHelper.getAllItems();  // 모든 아이템을 가져옴
+        DatabaseHelper dbHelper = new DatabaseHelper(context);
+        List<ListItem> items = dbHelper.getAllItems();
 
 
-        String startDate = "";  // 시작 날짜를 저장할 변수 초기화
-        String endDate = "";        // 종료 날짜를 저장할 변수 초기화
+        String startDate = "";
+        String endDate = "";
 
-        String eventText = ""; // 이벤트 텍스트를 저장할 변수 초기화
+        String eventText = "";
 
-        for (int i = 0; i < items.size(); i++) {        // 모든 아이템을 순회하며 시작 날짜와 종료 날짜를 가져옴
-            startDate = items.get(i).getStartDate();    // 시작 날짜를 가져옴
-            endDate = items.get(i).getEndDate();    // 종료 날짜를 가져옴
+        for (int i = 0; i < items.size(); i++) {
+            startDate = items.get(i).getStartDate();
+            endDate = items.get(i).getEndDate();
 
-            String formatStartDate = startDate.trim().replace(" / ", "-");  // 시작 날짜의 공백과 /를 -로 변경
-            String formatEndDate = endDate.trim().replace(" / ", "-");      // 종료 날짜의 공백과 /를 -로 변경
+            String formatStartDate = startDate.trim().replace(" / ", "-");
+            String formatEndDate = endDate.trim().replace(" / ", "-");
 
-            DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-M-d");     // 날짜 형식을 지정
+            DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-M-d");
 
-            LocalDate sDate = LocalDate.parse(formatStartDate, inputFormatter);     // 시작 날짜를 LocalDate 형식으로 변환
-            LocalDate eDate = LocalDate.parse(formatEndDate, inputFormatter);       // 종료 날짜를 LocalDate 형식으로 변환
-
-
-            final LocalDate date = days.get(position);      // 해당 날짜를 가져옴
-            if (date == null)
-                holder.dayOfMonth.setText("");
-            else {
-                holder.dayOfMonth.setText(String.valueOf(date.getDayOfMonth()));
-
-                // 날짜 토요일, 일요일 색상 변경 커스텀.
-                DayOfWeek dayOfWeek = date.getDayOfWeek();
-                if (dayOfWeek == DayOfWeek.SATURDAY) {
-                    holder.dayOfMonth.setTextColor(Color.parseColor("#00A5FF")); // 토요일은 파란색
-                } else if (dayOfWeek == DayOfWeek.SUNDAY) {
-                    holder.dayOfMonth.setTextColor(Color.parseColor("#DC6093")); // 일요일은 빨간색
-                } else {
-                    holder.dayOfMonth.setTextColor(Color.BLACK); // 그 외의 날짜는 검정색
-                }
-
-                if (date.equals(CalendarUtils.selectedDate))
-                    holder.parentView.setBackgroundColor(Color.LTGRAY);
+            LocalDate sDate = LocalDate.parse(formatStartDate, inputFormatter);
+            LocalDate eDate = LocalDate.parse(formatEndDate, inputFormatter);
 
 
-
-                if (date.isBefore(eDate) && date.isAfter(sDate)) {      // 시작 날짜와 종료 날짜 사이에 있는 날짜라면 이벤트 텍스트를 추가
-                    eventText += items.get(i).getTitle() + "\n"; // 이벤트 텍스트를 추가
-                }
-
-                if (date.isEqual(sDate) || date.isEqual(eDate)) {       // 시작 날짜와 종료 날짜가 같다면 이벤트 텍스트를 추가
-                    eventText += items.get(i).getTitle() + "\n"; // 이벤트 텍스트를 추가
-                }
-            }
-        }
-
-        if (items.isEmpty()) {      // 아이템이 없다면 이벤트 텍스트를 추가하지 않음
             final LocalDate date = days.get(position);
             if (date == null)
                 holder.dayOfMonth.setText("");
             else {
                 holder.dayOfMonth.setText(String.valueOf(date.getDayOfMonth()));
 
-                // 날짜 토요일, 일요일 색상 변경 커스텀.
+
                 DayOfWeek dayOfWeek = date.getDayOfWeek();
                 if (dayOfWeek == DayOfWeek.SATURDAY) {
-                    holder.dayOfMonth.setTextColor(Color.parseColor("#00A5FF")); // 토요일은 파란색
+                    holder.dayOfMonth.setTextColor(Color.parseColor("#00A5FF"));
                 } else if (dayOfWeek == DayOfWeek.SUNDAY) {
-                    holder.dayOfMonth.setTextColor(Color.parseColor("#DC6093")); // 일요일은 빨간색
+                    holder.dayOfMonth.setTextColor(Color.parseColor("#DC6093"));
                 } else {
-                    holder.dayOfMonth.setTextColor(Color.BLACK); // 그 외의 날짜는 검정색
+                    holder.dayOfMonth.setTextColor(Color.BLACK);
+                }
+
+                if (date.equals(CalendarUtils.selectedDate))
+                    holder.parentView.setBackgroundColor(Color.LTGRAY);
+
+
+
+                if (date.isBefore(eDate) && date.isAfter(sDate)) {
+                    eventText += items.get(i).getTitle() + "\n";
+                }
+
+                if (date.isEqual(sDate) || date.isEqual(eDate)) {
+                    eventText += items.get(i).getTitle() + "\n";
+                }
+            }
+        }
+
+        if (items.isEmpty()) {
+            final LocalDate date = days.get(position);
+            if (date == null)
+                holder.dayOfMonth.setText("");
+            else {
+                holder.dayOfMonth.setText(String.valueOf(date.getDayOfMonth()));
+
+
+                DayOfWeek dayOfWeek = date.getDayOfWeek();
+                if (dayOfWeek == DayOfWeek.SATURDAY) {
+                    holder.dayOfMonth.setTextColor(Color.parseColor("#00A5FF"));
+                } else if (dayOfWeek == DayOfWeek.SUNDAY) {
+                    holder.dayOfMonth.setTextColor(Color.parseColor("#DC6093"));
+                } else {
+                    holder.dayOfMonth.setTextColor(Color.BLACK);
                 }
 
 
@@ -120,7 +120,7 @@ class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder> {
             }
 
         }
-        holder.eventIndicator.setText(eventText); // 모든 이벤트 텍스트를 설정
+        holder.eventIndicator.setText(eventText);
     }
 
 
@@ -132,7 +132,7 @@ class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder> {
 
     public void getContents() {
         Log.i("##INFO", "getContents(): testmessaeg");
-        DatabaseHelper dbHelper = new DatabaseHelper(context); // 또는 해당 컨텍스트에 맞게 인스턴스화
+        DatabaseHelper dbHelper = new DatabaseHelper(context);
         List<ListItem> items = dbHelper.getAllItems();
         Log.i("##INFO", "getContents(): item.size = " + items.size());
 

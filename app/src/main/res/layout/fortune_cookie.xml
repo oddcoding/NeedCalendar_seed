@@ -17,20 +17,31 @@
         android:layout_marginBottom="20dp"
         android:layout_marginTop="10dp">
 
-
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:text="FORTUNE COOKIE"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:text="FORTUNE COOKIE "
             android:gravity="center"
             android:textColor="#4B8A08"
             android:textStyle="bold"
-            android:textSize="80sp">
+            android:textSize="60sp">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="버튼을 누르면 문구가 나와요."
+            android:gravity="center"
+            android:layout_marginBottom="50dp"
+            android:textColor="#4B8A08"
+            android:textStyle="bold"
+            android:textSize="23sp">
         </TextView>
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="220dp"
             android:layout_gravity="center"
             android:src="@drawable/cookie_icon">
         </ImageView>
@@ -46,11 +57,14 @@
 
         <Button
             android:id="@+id/cookie_button"
-            android:layout_width="wrap_content"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:layout_marginBottom="20dp"
             android:layout_gravity="center"
-            android:text="CRUSH THE COOKIE"
+            android:text="포춘쿠키"
+            android:textColor="@color/white"
+            android:background="@color/lightgreen"
             android:textSize="20sp" />
 
         <TextView
@@ -60,7 +74,9 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="40dp"
             android:text=""
-            android:textSize="18sp" />
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/green"/>
 
 
     </LinearLayout>
