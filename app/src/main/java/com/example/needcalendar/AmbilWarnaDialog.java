@@ -13,9 +13,6 @@ public class AmbilWarnaDialog {
     public AmbilWarnaDialog(ColorPicker colorPicker, int tColor, OnAmbilWarnaListener onAmbilWarnaListener) {
     }
 
-    public AmbilWarnaDialog(add_schedule.ColorPicker colorPicker, int tColor, OnAmbilWarnaListener onAmbilWarnaListener) {
-    }
-
 
     public interface OnAmbilWarnaListener {
         void onCancel(AmbilWarnaDialog dialog);

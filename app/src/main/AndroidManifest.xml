@@ -31,7 +31,7 @@
         <activity
             android:name="com.example.needcalendar.login"/>
         <activity
-            android:name="com.example.needcalendar.Screen"/>
+            android:name="com.example.needcalendar.record_check"/>
         <activity
             android:name="com.example.needcalendar.TodayCalendar"/>
         <activity

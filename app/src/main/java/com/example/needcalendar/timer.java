@@ -31,8 +31,8 @@ public class timer extends AppCompatActivity {
 
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().setStatusBarColor(Color.parseColor("#4ea1d3"));
-        }
 
+        }
         mStartBtn = (Button) findViewById(R.id.btn_start);
         mStopBtn = (Button) findViewById(R.id.btn_stop);
         mRecordBtn = (Button) findViewById(R.id.btn_record);
@@ -104,7 +104,7 @@ public class timer extends AppCompatActivity {
             }
         });
 
-        /* Button = findViewById(R.id.RCbtn);
+        Button = findViewById(R.id.RCbtn);
         Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -113,7 +113,7 @@ public class timer extends AppCompatActivity {
 
                 startActivity(intent1);
             }
-        }); */
+        });
 
 
 

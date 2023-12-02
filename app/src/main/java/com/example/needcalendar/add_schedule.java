@@ -4,7 +4,6 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -13,39 +12,15 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.Calendar;
 
 public class add_schedule extends AppCompatActivity {
-    public class ColorPicker extends AppCompatActivity {
-        private final String TAG=this.getClass().getSimpleName();
-        private int tColor; // 직전 선택한 색상
-        private Button btnColorPicker;
 
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.add_schedule);
-
-
-            btnColorPicker = (Button)findViewById(R.id.btn_color);
-            btnColorPicker.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) { Log.e(TAG,"choice() onClick");
-
-                }
-            });
-
-        }
-
-       }
-
-
-    Button btn_start_date, btn_start_time ,btn_end_date, btn_end_time, btn_repeat;
+    Button btn_start_date, btn_start_time ,btn_end_date, btn_end_time;
     DatePickerDialog datePickerDialog;
     TimePickerDialog timePickerDialog;
     MultiDatePickerDialog multiDatePickerDialog;
@@ -81,18 +56,6 @@ public class add_schedule extends AppCompatActivity {
         // 데이터베이스 도우미를 초기화합니다.
         dbHelper = new DatabaseHelper(this);
 
-        btn_help = (Button) findViewById(R.id.btn_help);
-        btn_help.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog.Builder d = new AlertDialog.Builder(add_schedule.this);
-
-                d.setTitle("기념일 알림 기능");
-                d.setMessage("기념일 알림 기능 활성화시 시정 시간 외에도 2차례 알림이 추가로 울립니다.");
-
-                d.show();
-            }
-        });
 
         // OK 버튼에 클릭 리스너를 설정합니다.
         okButton.setOnClickListener(new View.OnClickListener() {
@@ -214,7 +177,6 @@ public class add_schedule extends AppCompatActivity {
 
     }
 }
-
 
 
 

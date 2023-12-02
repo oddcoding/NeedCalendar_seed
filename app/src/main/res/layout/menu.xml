@@ -47,11 +47,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="0dp"
-            android:background="@color/brightgray"
+            android:background="@color/lightgreen"
             android:text=" 포춘쿠키"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:textColor="@color/gray"/>
+            android:textColor="@color/white"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -74,28 +74,16 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             tools:context=".Help_btn">
-        <Button
-            android:id="@+id/seed"
-            android:layout_width="302dp"
-            android:layout_height="50dp"
-            android:background="@color/brightgray"
-            android:text="            나의 씨앗보기"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="@color/gray"/>
-
-
             <Button
-                android:id="@+id/btn_help"
+                android:id="@+id/seed"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="도움말"
-                android:textSize="15dp"
-                android:background="@color/brightgray"
+                android:background="@color/lightgreen"
+                android:text="나의 씨앗보기"
+                android:textSize="20dp"
                 android:textStyle="bold"
-                android:textColor="@color/green"
-                android:onClick="onClick" ></Button>
+                android:textColor="@color/white"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -109,11 +97,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="50dp"
-            android:background="@color/brightgray"
+            android:background="@color/lightgreen"
             android:text="로그인"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:textColor="@color/gray"/>
+            android:textColor="@color/white"/>
 
         <LinearLayout
             android:layout_width="match_parent"
